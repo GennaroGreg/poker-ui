@@ -1,13 +1,13 @@
 # Welcome to the Poker UI Repository!
 ---
 ## Main Technologies Used:
-- Vite: v6.3.5
-- React.js: v19.1.0
-- TypeScript: v5.8.3
+- Vite: `6.3.5`
+- React.js: `19.1.0`
+- TypeScript: `5.8.3`
 - Reduxjs
-  -- `@reduxjs/toolkit`: v2.8.2
-  -- `react-redux`: v9.2.0
-- Material UI: v7.1.1
+  - `@reduxjs/toolkit`: `2.8.2`
+  - `react-redux`: `9.2.0`
+- Material UI: `7.1.1`
 ---
 ## API Integrations:
 - For Card Deck operations, [this API](https://www.deckofcardsapi.com/) is being used.
