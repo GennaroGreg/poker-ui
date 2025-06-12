@@ -1,54 +1,34 @@
-# React + TypeScript + Vite
+# Welcome to the Poker UI Repository!
+---
+## Main Technologies Used:
+- Vite: v6.3.5
+- React.js: v19.1.0
+- TypeScript: v5.8.3
+- Reduxjs
+  -- `@reduxjs/toolkit`: v2.8.2
+  -- `react-redux`: v9.2.0
+- Material UI: v7.1.1
+---
+## API Integrations:
+- For Card Deck operations, [this API](https://www.deckofcardsapi.com/) is being used.
+---
+## Setup the App Locally
+1. Clone the repository to the desired location on your local machine:
+    - `git clone https://github.com/GennaroGreg/poker-ui.git`
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+2. Download **Node.js** from [here](https://nodejs.org/en/download/).
+    - For Windows, click the green `Windows Installer (.msl)` button
+3. Install **Node.js** by opening the file from Step 2 and following the prompts
+    - It is recommended to follow the default settings
+4. Verify your **Node.js** installation by executing the following commands in a terminal window:
+    - `node -v` (Sample output: `v22.14.0`)
+    - `npm -v` (Sample output: `11.2.0`)
+5. Open the repository in your IDE
+6. Open a terminal within your IDE, targeting the root of the project
+7. Execute the following commands:
+    - `npm install`
+    - `npm run dev`
+8. Navigate to the Vite development server in your preferred web browser:
+    - `http://localhost:5173`
+9. To shut down the development server, press `ctrl + c` in the active terminal
+---
