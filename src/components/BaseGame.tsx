@@ -1,11 +1,11 @@
 import { Box, Button, TextField, Typography } from "@mui/material";
 import { cardDeckApi } from "../services/cardDeckApi";
-import ShuffleDeck from "./ShuffleDeck";
+import ShuffleDeck from "./deck-actions/ShuffleDeck";
 import { defaultDeckObject, type DeckObject } from "../model/card-operations";
 import { useState } from "react";
-import DeckDisplay from "./DeckDisplay";
+import DeckDisplay from "./deck-actions/DeckDisplay";
 import ClearGame from "./ClearGame";
-import PlayerHand from "./PlayerHand";
+import PlayerHand from "./deck-actions/PlayerHand";
 
 
 export default function BaseGame() {

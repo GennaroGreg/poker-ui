@@ -1,6 +1,6 @@
 import { Box, Button, Stack, Typography } from "@mui/material";
-import { defaultDealObject, type CardObject, type DeckObject } from "../model/card-operations";
-import { cardDeckApi } from "../services/cardDeckApi";
+import { defaultDealObject, type CardObject, type DeckObject } from "../../model/card-operations";
+import { cardDeckApi } from "../../services/cardDeckApi";
 import { useState } from "react";
 
 interface PlayerHandProps {

@@ -1,6 +1,6 @@
 import { Box, Button, Typography } from "@mui/material";
-import { cardDeckApi } from "../services/cardDeckApi";
-import { defaultDeckObject, type DeckObject } from "../model/card-operations";
+import { cardDeckApi } from "../../services/cardDeckApi";
+import { defaultDeckObject, type DeckObject } from "../../model/card-operations";
 import { useState } from "react";
 
 interface ShuffleDeckProps {
