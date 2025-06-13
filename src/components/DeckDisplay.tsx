@@ -4,8 +4,6 @@ export default function DeckDisplay() {
     const cardBackUrl = "https://www.deckofcardsapi.com/static/img/back.png"
 
     return (
-        <Box
-            component={"img"}
-            src={cardBackUrl} />
+        <Box sx={{ height: 250 }} component={"img"} src={cardBackUrl} />
     );
 }

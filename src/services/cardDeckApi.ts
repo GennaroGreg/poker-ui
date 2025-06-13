@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import type { DeckObject } from "../model/card-operations";
+import type { DealObject, DeckObject } from "../model/card-operations";
 
 
 export const cardDeckApi = createApi({
@@ -11,8 +11,10 @@ export const cardDeckApi = createApi({
         // Get a brand new deck of cards
         getNewDeck: builder.query<DeckObject, void>({ query: () => "deck/new" }),
         // Shuffle existing deck
-        shuffleDeck: builder.query<DeckObject, string>({ query: (deckId) => `deck/${deckId}/shuffle` })
+        shuffleDeck: builder.query<DeckObject, string>({ query: (deckId: string) => `deck/${deckId}/shuffle` }),
+        // Deal a hand of 2 to the Player
+        dealCards: builder.query<DealObject, {deckId: string, count: number}>({ query: ({deckId, count}) => `deck/${deckId}/draw/?count=${count}`})
     }),
 });
 
-export const { useGetNewDeckQuery, useShuffleDeckQuery } = cardDeckApi;
+export const { useGetNewDeckQuery, useShuffleDeckQuery, useDealCardsQuery } = cardDeckApi;

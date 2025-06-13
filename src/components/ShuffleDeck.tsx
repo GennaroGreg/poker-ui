@@ -1,19 +1,25 @@
 import { Box, Button, Typography } from "@mui/material";
 import { cardDeckApi } from "../services/cardDeckApi";
-import { defaultDeckObject, type DeckObject, type ShuffleObject } from "../model/card-operations";
+import { defaultDeckObject, type DeckObject } from "../model/card-operations";
 import { useState } from "react";
 
-export default function ShuffleDeck(deckId: ShuffleObject) {
+interface ShuffleDeckProps {
+    deckId: string;
+    setShuffled: (isShuffled: boolean) => void;
+}
+
+export default function ShuffleDeck({ deckId, setShuffled }: ShuffleDeckProps) {
     const [shuffledDeck, setShuffledDeck] = useState<DeckObject>(defaultDeckObject)
     const [displayMessage, setDisplayMessage] = useState<boolean>(false);
     const [trigger] = cardDeckApi.endpoints.shuffleDeck.useLazyQuery();
 
-    const handleShuffle = async() => {
-        const result = await trigger(deckId.deck_id).unwrap();
+    const executeShuffle = async () => {
+        const result = await trigger(deckId).unwrap();
         if (!result) return <Typography>An error occurred ...</Typography>
         setShuffledDeck(result);
         setDisplayMessage(true);
         clearMessage();
+        setShuffled(true);
     }
 
     const clearMessage = () => {
@@ -23,14 +29,13 @@ export default function ShuffleDeck(deckId: ShuffleObject) {
 
         return () => clearTimeout(timer);
     }
-    
+
     return (
         <Box sx={{ mt: 4 }}>
-            <Button color="success" variant="contained" onClick={handleShuffle}>Shuffle Deck</Button>
             {
                 (displayMessage && shuffledDeck !== defaultDeckObject)
-                ? <Typography sx={{ mt: 2 }}>The deck has been successfully shuffled!</Typography>
-                : null
+                    ? <Typography sx={{ mt: 0 }}>The deck has been successfully shuffled!</Typography>
+                    : <Button color="warning" variant="contained" onClick={executeShuffle}>Shuffle Deck</Button>
             }
         </Box>
     )
